@@ -1,2 +1,15 @@
+# Compiled Elm code
 elm.js
+
+# Elm packages
 elm-stuff/
+
+# Haskell output
+dist/
+
+# Cabal sandbox stuff
+.cabal-sandbox/
+cabal.sandbox.config
+
+# Clay-generated css
+*.css
