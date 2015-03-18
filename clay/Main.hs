@@ -2,7 +2,8 @@
 
 module Main where
 
-import           Clay
+import           Clay              hiding ((**))
+import           Clay.Size
 import qualified Data.Text.Lazy.IO as LIO
 
 main :: IO ()
@@ -11,4 +12,26 @@ main = do
   LIO.writeFile "./assets/generated.css" css
 
 pfennig :: Css
-pfennig = body ? background white
+pfennig = do
+  body ? do
+    background white
+
+  star ? do
+    boxSizing borderBox
+
+  form |> ".row" ? do
+    display flex
+
+    label <? do
+      width $ pct 25
+
+    input <? do
+      width $ pct 75
+
+  ".row" ? do
+    display flex
+    flexDirection row
+
+  ".column" ? do
+    display flex
+    flexDirection column
